@@ -172,4 +172,41 @@ When you search for a product in an e-commerce app, the time taken by the server
 - **Load Balancer** → Distributes requests across multiple servers, avoiding overload on a single node  
 - **Upgrade Resources** → Improve server capacity (CPU, memory, storage, network speed) for faster processing  
 
+# Availability in Systems
+
+## What is Availability?
+**Availability** is the ability of a system to remain operational and accessible even when failures occur.  
+A highly available system ensures that users can access services with minimal downtime.
+
+- **Fault Tolerance** is directly proportional to **Availability**.  
+  (More fault tolerance → Higher availability)
+
+---
+
+## How to Increase Availability?
+
+### 1. Replication
+- Process of **copying data or synchronizing state** between nodes.  
+- Ensures if one node fails, another can serve the same data.  
+- Replication usually includes **redundancy**.
+
+### 2. Redundancy
+- Having **backup components** (servers, databases, or networks).  
+- If one fails, the backup immediately takes over.  
+- Prevents single points of failure.
+
+### 3. Fault Tolerance
+- System’s ability to **continue operating correctly even when some components fail**.  
+- Achieved through replication, redundancy, and robust error handling.
+
+### 4. Load Balancing
+- Distributes traffic across multiple servers.  
+- Prevents any single server from becoming a bottleneck or point of failure.  
+- Improves both performance and availability.
+
+---
+
+## Quick Example
+- In a **monolithic system**, if the single server crashes → entire system is down.  
+- In a **distributed system**, with replication + load balancing → traffic is rerouted to healthy servers, so the system stays available.  
 

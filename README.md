@@ -67,3 +67,26 @@ Monolithic Architecture is also known as a **Centralised System**.
 - Harder to scale → you must scale the entire application, not just the part that needs more resources  
 
 ---
+
+
+# Distributed System
+
+## What is a Distributed System?
+A **Distributed System** is a collection of multiple individual systems connected through a network that share resources, communicate, and coordinate to achieve common goals.
+
+
+---
+<img width="964" height="484" alt="image" src="https://github.com/user-attachments/assets/976ff7e1-0d96-4459-b483-7d08713538bb" />
+## Advantages
+- **Scalable** → Can handle increasing workloads by adding more machines  
+- **Low Latency** → Tasks can be processed closer to the user or data source  
+- **No Single Point of Failure** → System keeps running even if one machine fails  
+
+---
+
+## Disadvantages
+- **Complex** → More difficult to design and maintain than a single system  
+- **Management Required** → Needs load balancing and monitoring tools  
+- **Difficult to Secure** → More systems mean more attack surfaces  
+- **Message Loss** → Communication between nodes can fail, causing data loss or delays  
+

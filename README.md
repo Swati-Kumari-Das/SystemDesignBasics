@@ -31,6 +31,31 @@ Low-Level Design describes the detailed design of each element mentioned in the 
 ## What is Monolithic Architecture?
 If all the components and functionalities of a project are **entangled and combined in a single codebase**, then that is a **Monolithic Application**.  
 
+## Network Delay
+
+**Network Delay** is the time taken for data to travel across the network from one system (or node) to another.  
+It depends on factors like:  
+- Physical distance between systems  
+- Network bandwidth (capacity of data transfer)  
+- Network congestion (traffic load)  
+- Routing and switching delays  
+
+💡 Example:  
+When you search for a product in an e-commerce app:  
+- The time taken for your request to travel from your phone to the server (and the response to come back) is the **network delay**.  
+## Computational Delay
+
+**Computational Delay** is the time taken by the system to process a request after it is received.  
+It depends on factors like:  
+- CPU speed and efficiency  
+- Amount of data to be processed  
+- Algorithm complexity  
+- Memory and disk usage  
+
+💡 Example:  
+When you search for a product in an e-commerce app, the time taken by the server to query the database, apply filters, and prepare the result before sending it back is the **computational delay**.  
+
+
 Monolithic Architecture is also known as a **Centralised System**.
 
 ---

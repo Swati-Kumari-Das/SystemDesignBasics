@@ -141,3 +141,35 @@ When you search for a product in an e-commerce app, the time taken by the server
 - Upgrading infrastructure (faster servers, optimized code, better network) also helps reduce computational and network delays.  
 
 
+# Throughput in Systems
+
+## What is Throughput?
+**Throughput** = Volume of work or information flowing through a system.  
+
+- It represents the **amount of data transmitted per unit of time**  
+- Measured in **bits per second (bps)**  
+- Think of it as the **process flow rate** of the system  
+
+---
+
+## Throughput in Different Architectures
+- **Monolithic Architecture** → Throughput is usually **less** (limited resources, single system)  
+- **Distributed Systems** → Throughput can be scaled almost **without limit** using load balancers and additional nodes  
+
+---
+
+## Causes of Low Throughput
+- **High Latency** → Delays in computation or network  
+- **Protocol Overhead** → Extra information added during communication  
+- **Network Congestion** → Too many requests or heavy traffic in the system  
+
+---
+
+## Improving Throughput
+- **CDN (Content Delivery Network)** → Delivers content closer to users, reducing network bottlenecks  
+- **Caching** → Stores frequently used data, reducing repeated computation and database queries  
+- **Distributed Systems (DS)** → Scale horizontally by adding more nodes to handle larger workloads  
+- **Load Balancer** → Distributes requests across multiple servers, avoiding overload on a single node  
+- **Upgrade Resources** → Improve server capacity (CPU, memory, storage, network speed) for faster processing  
+
+

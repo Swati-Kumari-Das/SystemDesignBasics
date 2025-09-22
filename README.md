@@ -210,3 +210,44 @@ A highly available system ensures that users can access services with minimal do
 - In a **monolithic system**, if the single server crashes → entire system is down.  
 - In a **distributed system**, with replication + load balancing → traffic is rerouted to healthy servers, so the system stays available.  
 
+# Consistency in Systems
+
+## What is Consistency?
+**Consistency** means that all clients accessing the system should see the same data at the same time.  
+
+- A system is **consistent** when every client gets the same, correct, and most recent data.  
+- If some clients see outdated or uncommitted data (called a **dirty read**), then the system is **not consistent**.  
+
+---
+
+## Consistency in Architectures
+- **Monolithic Architecture** → Consistency is easier to maintain since all data is in a single system.  
+- **Distributed Systems** → Consistency is harder to achieve because data is replicated across multiple nodes. Updates may take time to propagate to all replicas.  
+
+---
+
+## Factors Improving Consistency
+- **Improving Network Bandwidth** → Faster synchronization between nodes.  
+- **Stop the Read** → Temporarily block reads until updates are complete.  
+- **Replication with Distance-Aware Strategies** → Prioritize updates to closer nodes first to reduce inconsistency.  
+
+---
+
+## Types of Consistency
+
+### 1. Strong Consistency
+- The system does **not allow read operations** until **all replicas are updated**.  
+- Guarantees that every client sees the latest data.  
+- ✅ Always correct, ❌ Slower due to waiting.  
+
+### 2. Eventual Consistency
+- The system **allows reads** even before all replicas are updated.  
+- Some clients may see old data, but eventually all replicas will converge to the latest version.  
+- ✅ Faster, ❌ May show stale data temporarily.  
+
+### 3. Weak Consistency
+- The system does **not guarantee** that all clients will see the most recent data.  
+- Useful in cases like **real-time streaming or gaming**, where **speed is more important than accuracy**.  
+- ✅ Very fast, ❌ No strong guarantees on correctness.  
+
+---

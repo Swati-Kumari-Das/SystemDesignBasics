@@ -283,7 +283,19 @@ The **CAP Theorem** states that in a **distributed system**, it is impossible to
 ### 3. Availability + Consistency (CA System)
 - **What it provides**: Data is consistent and system is available when no partitions exist.  
 - **Compromises**: Partition tolerance (system fails if there is a network partition).  
-- **Example**: Relational databases like MySQL, PostgreSQL (single-node setup).  
+- **Example**: Relational databases like MySQL, PostgreSQL (single-node setup).
+
+# Important Note about CAP Theorem
+
+In practice, **Partition Tolerance (P) is mandatory** for distributed systems, because network failures are unavoidable.  
+Therefore, the real design choice is between:  
+
+- **Consistency (C)** → All clients always see the same data, but the system may reject some requests during partitions.  
+- **Availability (A)** → The system always responds, but some clients may see outdated data during partitions.  
+
+👉 So, in real-world distributed systems, we always pick **CP** or **AP** trade-offs.  
+The **CA combination** exists only in theory (single-node or non-distributed systems).  
+
 
 ---
 

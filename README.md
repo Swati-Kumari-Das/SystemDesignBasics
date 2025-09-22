@@ -1,4 +1,4 @@
-# System Designing
+# System Design
 
 System design is the process of designing the elements of a system such as the **architecture**, **modules and components**, the **interfaces** of those components, and the **data** that flows through the system.  
 

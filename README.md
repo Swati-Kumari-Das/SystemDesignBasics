@@ -90,5 +90,29 @@ A **Distributed System** is a collection of multiple individual systems connecte
 - **Complex** → More difficult to design and maintain than a single system  
 - **Management Required** → Needs load balancing and monitoring tools  
 - **Difficult to Secure** → More systems mean more attack surfaces  
-- **Message Loss** → Communication between nodes can fail, causing data loss or delays  
+- **Message Loss** → Communication between nodes can fail, causing data loss or delays
+
+# Latency in Systems
+
+## What is Latency?
+**Latency** = Network Delay + Computational Delay  
+
+- In **Monolithic Architecture** → Latency comes only from **computational delay**  
+- In **Distributed Architecture** → Latency = **computational delay + network delay**  
+
+---
+
+## How to Reduce Latency?
+
+### 1. Caching
+- **Caching** is the process of storing information for a set period of time on a computer.  
+- It allows frequently accessed data to be served faster without recalculating or fetching it from the database every time.  
+
+### 2. CDN (Content Delivery Network)
+- **CDNs** are geographically distributed networks of proxy servers.  
+- Their main objective is to **serve content to users more quickly** by bringing it closer to their location.  
+
+### 3. Upgrading
+- Upgrading infrastructure (faster servers, optimized code, better network) also helps reduce computational and network delays.  
+
 

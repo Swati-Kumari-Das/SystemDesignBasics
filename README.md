@@ -77,6 +77,8 @@ A **Distributed System** is a collection of multiple individual systems connecte
 
 ---
 <img width="964" height="484" alt="image" src="https://github.com/user-attachments/assets/976ff7e1-0d96-4459-b483-7d08713538bb" />
+
+---
 ## Advantages
 - **Scalable** → Can handle increasing workloads by adding more machines  
 - **Low Latency** → Tasks can be processed closer to the user or data source  

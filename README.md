@@ -251,3 +251,45 @@ A highly available system ensures that users can access services with minimal do
 - ✅ Very fast, ❌ No strong guarantees on correctness.  
 
 ---
+# CAP Theorem
+
+## What is CAP Theorem?
+The **CAP Theorem** states that in a **distributed system**, it is impossible to simultaneously guarantee all three properties:  
+
+- **C – Consistency** → Every client sees the same data at the same time.  
+- **A – Availability** → The system is always up and responds to every request.  
+- **P – Partition Tolerance** → The system continues to function even if network failures occur and nodes cannot communicate.  
+
+👉 According to CAP, a distributed system can only provide **two of the three guarantees** at the same time. The third one must be compromised.  
+
+---
+
+## Trade-offs in CAP Theorem
+
+### 1. Consistency + Partition Tolerance (CP System)
+- **What it provides**: Strong consistency and fault tolerance.  
+- **Compromises**: Availability is reduced (system may reject requests during failures).  
+- **Example**: Traditional databases like HBase, MongoDB (in some configurations).  
+
+---
+
+### 2. Partition Tolerance + Availability (AP System)
+- **What it provides**: System stays up and tolerant to network failures.  
+- **Compromises**: Consistency is weaker (may serve stale data).  
+- **Example**: DynamoDB, Cassandra.  
+
+---
+
+### 3. Availability + Consistency (CA System)
+- **What it provides**: Data is consistent and system is available when no partitions exist.  
+- **Compromises**: Partition tolerance (system fails if there is a network partition).  
+- **Example**: Relational databases like MySQL, PostgreSQL (single-node setup).  
+
+---
+
+## Summary
+- **CAP is about trade-offs** → You can’t have it all in a distributed system.  
+- The **system requirements** define which two properties should be prioritized.  
+
+<img width="530" height="461" alt="image" src="https://github.com/user-attachments/assets/fa05e2a7-7a70-4a61-b89c-55751242cf9d" />
+

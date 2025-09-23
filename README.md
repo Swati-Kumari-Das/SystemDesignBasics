@@ -305,3 +305,37 @@ The **CA combination** exists only in theory (single-node or non-distributed sys
 
 <img width="530" height="461" alt="image" src="https://github.com/user-attachments/assets/fa05e2a7-7a70-4a61-b89c-55751242cf9d" />
 
+# Lamport Logical Clock
+
+## What is Lamport Logical Clock?
+A **Lamport Logical Clock** is a method used in distributed systems to **order events** (decide which happened before which) when there is **no global clock**.  
+
+It was introduced by **Leslie Lamport** to solve the problem of **event ordering** in distributed environments.
+
+---
+
+## How it Works
+1. **Each process** in the system maintains its own logical clock (an integer counter).  
+2. **Rules**:
+   - **Rule 1**: Every time a process performs an internal event, it increments its clock by 1.  
+   - **Rule 2**: When a process sends a message, it includes its current clock value in the message.  
+   - **Rule 3**: When a process receives a message, it updates its clock to:  
+     ```
+     max(local clock, received clock) + 1
+     ```
+3. Using this, we can decide the order of events, even if they occurred on different machines.  
+
+---
+
+## Example
+- Process P1 sends a message with timestamp **5**.  
+- Process P2’s clock is currently **3**.  
+- When P2 receives the message, it updates its clock to **max(3, 5) + 1 = 6**.  
+- This way, events are ordered consistently across the system.  
+
+---
+
+## Limitations
+- Lamport clocks can tell us the **order of events**, but **cannot tell if two events are truly concurrent**.  
+- For that, **Vector Clocks** are used.  
+

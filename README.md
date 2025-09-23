@@ -339,3 +339,50 @@ It was introduced by **Leslie Lamport** to solve the problem of **event ordering
 - Lamport clocks can tell us the **order of events**, but **cannot tell if two events are truly concurrent**.  
 - For that, **Vector Clocks** are used.  
 
+# Scalability
+
+## What is Scalability?
+**Scalability** is the ability of a system to handle increasing workloads (more users, data, or requests) by **adding resources**.  
+A scalable system can grow without performance loss.  
+
+---
+
+## Types of Scalability
+
+### 1. Vertical Scaling (Scaling Up)
+Adding **more power** (CPU, RAM, storage) to a single server.  
+
+- Example: Upgrading from 8 GB RAM to 32 GB RAM on the same machine.  
+
+**✅ Pros**  
+- Easy to implement  
+- Less power consumption (fewer machines)  
+- Easy to manage and maintain (only one system)  
+
+**❌ Cons**  
+- **Single point of failure** → If the server goes down, the whole system is unavailable  
+- **Limited scale** → Bound by the maximum hardware capacity  
+- Can become expensive when upgrading high-end hardware  
+
+---
+
+### 2. Horizontal Scaling (Scaling Out)
+Adding **more servers** to distribute the load.  
+
+- Example: Adding 5 more servers and using a load balancer to handle requests.  
+
+**✅ Pros**  
+- Overcomes all major drawbacks of vertical scaling  
+- No single point of failure → If one server fails, others keep running  
+- Virtually unlimited scaling by adding more nodes  
+- Cost-efficient with commodity hardware  
+
+**❌ Cons**  
+- More complex to implement (requires load balancing, distributed databases, replication)  
+- Higher operational overhead (monitoring and managing many servers)  
+
+---
+
+## Quick Analogy
+- **Vertical Scaling** → Upgrading a single restaurant’s kitchen with bigger ovens.  
+- **Horizontal Scaling** → Opening more restaurant branches to serve more customers.  

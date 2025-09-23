@@ -385,4 +385,50 @@ Adding **more servers** to distribute the load.
 
 ## Quick Analogy
 - **Vertical Scaling** → Upgrading a single restaurant’s kitchen with bigger ovens.  
-- **Horizontal Scaling** → Opening more restaurant branches to serve more customers.  
+- **Horizontal Scaling** → Opening more restaurant branches to serve more customers.
+
+  # Redundancy and Replication
+
+## What is Redundancy?
+**Redundancy** is the duplication of nodes or components so that when one node or component fails, another duplicate node is available to serve customers.  
+It ensures **higher availability** by avoiding single points of failure.  
+
+---
+
+## Types of Redundancy
+
+### 1. Active Redundancy
+- All redundant units are **active and operational** at the same time.  
+- Multiple nodes are connected to a **load balancer**.  
+- Each node receives an **equal share of load**.  
+- ✅ Advantage: Better resource utilization and fault tolerance.  
+
+### 2. Passive Redundancy
+- Only **one node is active**, while others remain **idle (standby mode)**.  
+- If the active node fails, the passive node becomes active and continues serving requests.  
+- ✅ Advantage: Simpler to implement.  
+- ❌ Drawback: Standby resources are underutilized.  
+
+---
+
+## Replication
+
+**Replication** = **Redundancy + Synchronization**  
+
+It means not only having duplicate nodes (redundancy), but also **synchronizing data** between them to ensure consistency.
+
+### Master-Slave Replication
+- All **read and write operations** go to the **master node**.  
+- If the master goes down, one of the slaves is promoted to master.  
+- Ensures **availability** and **fault tolerance**.  
+
+#### Synchronous Replication
+- Changes are written to **master and slave at the same time**.  
+- ✅ Strong consistency.  
+- ❌ Slower (higher latency).  
+
+#### Asynchronous Replication
+- Changes are written to **master first**, then queued and written to slaves later.  
+- ✅ Faster (low latency).  
+- ❌ May serve stale data (eventual consistency).  
+  

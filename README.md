@@ -486,5 +486,52 @@ It ensures:
 2. **Least Response Time** → Routes requests to the server with the fastest response time.  
 
 ---
+# Caching
+
+## What is Caching?
+**Caching** is the process of temporarily storing frequently accessed data in a faster storage (like memory) so future requests can be served more quickly.  
+
+- Reduces latency  
+- Improves system performance  
+- Decreases database load  
+
+💡 Example: When you revisit a website, your browser loads some data (like images, CSS files) from the cache instead of downloading it again.  
+
+---
+
+## Types of Caching
+
+### 1. Client-Side Caching
+- Data is stored on the client (e.g., browser cache, cookies, local storage).  
+- ✅ Example: Web browsers caching images, CSS, and JavaScript files.  
+
+### 2. Server-Side Caching
+- Data is stored on the application server.  
+- ✅ Example: A web server caching rendered HTML pages to avoid regenerating them for each user.  
+
+### 3. Database Caching
+- Frequently queried data is cached in memory.  
+- ✅ Example: Using **Redis** or **Memcached** to store results of expensive database queries.  
+
+### 4. Content Delivery Network (CDN) Caching
+- Static content (images, videos, files) is cached on geographically distributed servers.  
+- ✅ Example: Cloudflare CDN caching website assets for faster global delivery.  
+
+### 5. Application/Distributed Caching
+- Frequently accessed data is stored in a distributed cache system shared across multiple servers.  
+- ✅ Example: Session caching in **Redis** for a distributed web application.  
+
+---
+
+## When to Use Caching?
+- When the same data is requested frequently (e.g., user profiles, product listings).  
+- When reducing latency is critical (e.g., serving content to global users).  
+- When database load needs to be minimized.  
+- When serving **static content** (e.g., images, videos, files).  
+- When scaling systems to handle high traffic efficiently.  
+
+❌ Avoid caching when:  
+- Data changes very frequently and stale data can cause issues (e.g., real-time stock trading systems).  
+- Strong consistency is required.  
 
   

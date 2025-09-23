@@ -592,3 +592,35 @@ Since cache storage is limited, **eviction strategies** define how to decide whi
 - **FIFO/LIFO** → Simple to implement, used in some buffer systems.  
 - **RR** → Used when tracking access history is too costly.  
 
+
+# File-Based Storage System
+
+## What is it?
+A **File-Based Storage System** is a database management approach where data is stored directly in the form of files.  
+Each file contains records, and applications must handle data retrieval, updates, and management manually.  
+
+---
+
+## Challenges of File-Based Systems
+
+1. **Data Redundancy**
+   - The same data may be stored in multiple files, leading to duplication and wasted storage.  
+   - ❌ Example: Customer details saved separately in multiple files for billing and support.
+
+2. **Poor Security**
+   - File systems provide limited access control compared to modern databases.  
+   - Unauthorized users may easily access or modify files.  
+
+3. **Slow Performance**
+   - Searching, updating, and retrieving data from large files is inefficient.  
+   - No indexing or optimized query mechanisms → slower operations compared to DBMS.  
+
+---
+
+## Why Move Beyond File-Based Systems?
+Modern **Database Management Systems (DBMS)** solve these challenges with:  
+- Centralized data management  
+- Improved security & access control  
+- Reduced redundancy via normalization  
+- Faster queries with indexing & optimization  
+

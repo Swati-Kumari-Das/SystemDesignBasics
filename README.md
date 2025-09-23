@@ -534,4 +534,61 @@ It ensures:
 - Data changes very frequently and stale data can cause issues (e.g., real-time stock trading systems).  
 - Strong consistency is required.  
 
-  
+ # Cache Eviction Strategies
+
+## What is Cache Eviction?
+Since cache storage is limited, **eviction strategies** define how to decide which data should be removed (evicted) when the cache is full, to make room for new data.
+
+---
+
+## Common Cache Eviction Policies
+
+### 1. **LRU (Least Recently Used)**
+- Removes the data that was least recently accessed.
+- Assumes recently used data will be used again soon.
+- ✅ Example: Browser history cache.
+
+---
+
+### 2. **LFU (Least Frequently Used)**
+- Removes the data accessed the least number of times.
+- Focuses on frequency of access.
+- ✅ Example: An app cache where some rarely used features’ data is removed first.
+
+---
+
+### 3. **MRU (Most Recently Used)**
+- Removes the data that was most recently accessed.
+- Useful when older data is more likely to be reused.
+- ✅ Example: In a music app, the most recently played song might be removed, assuming the user won’t play it again immediately.
+
+---
+
+### 4. **FIFO (First In First Out)**
+- Removes the oldest data that entered the cache first.
+- Works like a queue.
+- ✅ Example: A print job buffer.
+
+---
+
+### 5. **LIFO (Last In First Out)**
+- Removes the most recent data that entered the cache last.
+- Works like a stack.
+- ✅ Example: Undo operations in text editors.
+
+---
+
+### 6. **RR (Random Replacement)**
+- Randomly removes any cache entry.
+- Simple but unpredictable.
+- ✅ Example: Used in hardware-level cache when tracking usage is expensive.
+
+---
+
+## Choosing a Strategy
+- **LRU** → Best when recent access patterns matter (most common).  
+- **LFU** → Best when some items are accessed very frequently.  
+- **MRU** → Best when older data is more important than recent.  
+- **FIFO/LIFO** → Simple to implement, used in some buffer systems.  
+- **RR** → Used when tracking access history is too costly.  
+

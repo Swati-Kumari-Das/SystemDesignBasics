@@ -430,5 +430,61 @@ It means not only having duplicate nodes (redundancy), but also **synchronizing 
 #### Asynchronous Replication
 - Changes are written to **master first**, then queued and written to slaves later.  
 - ✅ Faster (low latency).  
-- ❌ May serve stale data (eventual consistency).  
+- ❌ May serve stale data (eventual consistency).
+
+  # Load Balancer
+
+## What is Load Balancing?
+**Load Balancing** is the process of efficiently distributing incoming network traffic across multiple servers (nodes) in a distributed system.  
+
+It ensures:  
+- **High scalability**  
+- **High throughput**  
+- **High availability**  
+
+---
+
+## Roles of a Load Balancer
+- **Equal Distribution** → Distributes load evenly over all nodes  
+- **Health Checks** → Detects if a node is not operational and routes requests to healthy nodes  
+- **Ensures Reliability** → Maintains high availability and prevents overload  
+
+---
+
+## When to Use Load Balancing
+- ❌ Not needed in **monolithic** or **vertically scaled systems** (single server).  
+- ✅ Essential in **microservices** and **distributed systems** where traffic needs to be shared among many servers.  
+
+---
+
+## Challenges of Load Balancing
+- **Single Point of Failure** → If the load balancer fails, client-server communication breaks.  
+  - ✅ Solution: Use **redundancy** (active load balancer + passive backup).  
+
+---
+
+## Advantages of Load Balancing
+- **Optimisation** → Better resource utilization and lower response time.  
+- **Better User Experience** → Reduces latency and errors.  
+- **Prevents Downtime** → Routes traffic only to operational servers.  
+- **Flexibility** → Can re-route traffic during failures or maintenance.  
+- **Scalability** → Handles sudden traffic spikes by adding servers.  
+- **Redundancy** → Provides fault tolerance by redirecting traffic in case of server failure.  
+
+---
+
+## Load Balancing Algorithms
+
+### Static Algorithms
+1. **Round Robin** → Requests are distributed in rotation order.  
+2. **Weighted Round Robin** → Like Round Robin but gives priority to servers with higher capacity.  
+3. **IP Hash Algorithm** → Uses a hash of the client’s IP address to assign a server.  
+4. **Source IP Hash** → Combines source and destination IPs to generate a hash key for request routing.  
+
+### Dynamic Algorithms
+1. **Least Connections** → Routes traffic to the server with the fewest active connections.  
+2. **Least Response Time** → Routes requests to the server with the fastest response time.  
+
+---
+
   

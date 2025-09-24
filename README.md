@@ -624,3 +624,48 @@ Modern **Database Management Systems (DBMS)** solve these challenges with:
 - Reduced redundancy via normalization  
 - Faster queries with indexing & optimization  
 
+# Relational Database Management System (RDBMS)
+
+## What is RDBMS?
+An **RDBMS (Relational Database Management System)** is software that allows performing operations on a relational database, where data is stored in structured tables and relationships are defined between them.
+
+---
+
+## Key Features
+
+- **Software** → Manages relational databases.  
+- **Operations** → Store, manage, query, and retrieve data.  
+- **Tables** → Data is represented in the form of rows & columns.  
+- **Foreign Keys** → Relationships between tables are established using foreign keys.  
+
+---
+
+## Advantages of RDBMS
+
+1. **No Data Redundancy and Inconsistency**  
+   - Centralized storage avoids duplicate data.  
+
+2. **Data Searching**  
+   - Built-in SQL querying makes searching fast and efficient (no external program needed).  
+
+3. **Data Concurrency**  
+   - Provides locking mechanisms to allow multiple users to work simultaneously without conflicts.  
+
+4. **Data Integrity**  
+   - Enforces rules to maintain correct data (e.g., numeric columns can’t store alphabets).  
+   - Unlike file systems, constraints are automatically checked.  
+
+---
+
+## Disadvantages of RDBMS
+
+1. **Rigid Schema**  
+   - Schema must be defined beforehand; not flexible for unstructured data.  
+
+2. **High Cost**  
+   - Licensing and maintenance can be expensive.  
+
+3. **Scalability Issues**  
+   - Vertical scaling is easier, but horizontal scaling (sharding) is difficult to implement.  
+
+---

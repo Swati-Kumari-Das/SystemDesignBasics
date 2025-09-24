@@ -829,3 +829,38 @@ Imagine an **E-commerce Application**:
 - Indexing improves **read/query performance**.  
 - Use for **large, read-heavy databases**.  
 - Avoid for **write-heavy or small databases**.  
+
+# Synchronous Communication
+
+## What is Synchronous Communication?
+- **Synchronous communication** means a **blocking call**, where the sender waits for the receiver to respond before continuing.  
+- Ensures **consistency and reliability** in transactions.  
+
+---
+
+## Key Characteristics
+- Blocking in nature → caller is paused until response arrives.  
+- Strong **consistency** → ensures both parties are in sync.  
+- Often used in **transactional systems**.  
+
+---
+
+## Industrial Use Cases
+1. **Stock Market** 📈  
+   - Trades must be executed in real-time with guaranteed consistency.  
+
+2. **Bank Payments** 🏦  
+   - Money transfer requires immediate confirmation from both banks.  
+
+3. **Ticket Booking** 🎟️  
+   - Seats must be locked and confirmed instantly to avoid double booking.  
+
+4. **Real-Time Decision Making** ⚡  
+   - Critical applications (e.g., healthcare systems, fraud detection) rely on immediate responses.  
+
+---
+
+## Summary
+- ✅ Guarantees **accuracy and consistency**.  
+- ❌ Can lead to **delays** if the receiver is slow or unavailable.  
+- Best suited for **mission-critical, real-time systems**.  

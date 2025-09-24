@@ -967,3 +967,42 @@ Imagine an **E-commerce Application**:
 
 ---
 
+# 🌐 Web Server
+
+## 📝 Core Concept
+A **web server** is a combination of hardware and software that ensures web applications are always **up and running**, serving client requests over the internet.
+
+---
+
+## 🖥️ Hardware Side
+- A **computer** that stores:
+  - Website component files (HTML, CSS, JavaScript, images, etc.)
+  - Web server software
+- Connects to the **Internet** and exchanges data with client devices.
+
+---
+
+## ⚙️ Software Side
+- Includes an **HTTP server**:
+  - Understands **URLs** (web addresses) and the **HTTP protocol**.
+  - Delivers website content to the user’s browser through domain names.
+- Examples: **Apache, Nginx, Microsoft IIS**.
+
+---
+
+## 🔄 How It Works
+1. A **browser** sends a request for a file (HTML, CSS, JS, image, etc.) using **HTTP**.  
+2. The request reaches the **web server hardware**.  
+3. The **HTTP server software**:  
+   - Finds the requested file.  
+   - Sends it back as an **HTTP response**.  
+4. If the file is missing → returns a **404 error**.  
+
+---
+
+
+---
+
+✅ **In short**:  
+A **web server** = **Hardware (stores files)** + **Software (HTTP server to process requests)** → makes websites accessible to users.
+

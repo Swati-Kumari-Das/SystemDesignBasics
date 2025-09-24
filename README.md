@@ -903,4 +903,67 @@ Imagine an **E-commerce Application**:
 
 ## Summary
 - ✅ Great for **long-running, high-scale, fault-tolerant** systems.  
-- ❌ Not ideal when **immediate consistency** or real-time confirmation is required.  
+- ❌ Not ideal when **immediate consistency** or real-time confirmation is required.
+
+# Message-Based Communication
+
+## 📌 Core Concept
+- A **client (producer)** sends a request in the form of a **message**.  
+- A **consumer** processes the request and may send back a response (also as a message).  
+- Communication is **asynchronous** → the client is **not blocked** while waiting for a reply.  
+
+---
+
+## 🔑 Key Components
+1. **Producer** → Service that creates and sends the message.  
+2. **Consumer** → Service that receives and processes the message.  
+3. **Agent (Message Broker)** → The intermediary (e.g., **Kafka**, **RabbitMQ**) that routes messages between producers and consumers.  
+
+---
+
+## 📨 Communication Models
+
+### 1. Point-to-Point (P2P) Model
+- **One producer → One consumer**.  
+- A message is consumed by exactly **one receiver**.  
+- Example: **Order Service → Payment Service**.  
+
+### 2. Publish-Subscribe (Pub/Sub) Model
+- **One producer → Many consumers**.  
+- All subscribers to a topic receive the same message.  
+- Example: **Notification Service** (send updates to **mobile app, email, SMS**).  
+
+---
+
+## ⚙️ Tools for Message-Based Communication
+- **Apache Kafka**  
+  - Distributed event streaming platform.  
+  - Best for **Pub/Sub** at high scale.  
+  - Real-time data pipelines and event-driven systems.  
+
+- **RabbitMQ**  
+  - Traditional message broker with flexible routing.  
+  - Works well for **P2P** and **Pub/Sub**.  
+  - Reliable delivery with acknowledgments.  
+
+---
+
+## ✅ Benefits
+- Decoupling between services.  
+- Asynchronous → **non-blocking** communication.  
+- Fault tolerance → retries if a service is down.  
+- Scales easily across distributed systems.  
+
+---
+
+## 📊 Quick Comparison
+
+| Feature                  | Synchronous Communication | Point-to-Point (P2P) | Publish-Subscribe (Pub/Sub) |
+|--------------------------|----------------------------|-----------------------|-----------------------------|
+| Blocking?                | Yes (client waits)         | No (async)            | No (async)                  |
+| Consumers per message    | 1                          | 1                     | Many                        |
+| Use Cases                | Banking transactions, ticket booking | Order → Payment | Notifications, streaming data |
+| Examples                 | REST API, gRPC             | RabbitMQ Queue        | Kafka Topics, RabbitMQ Exchange |
+
+---
+

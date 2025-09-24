@@ -797,3 +797,35 @@ Imagine an **E-commerce Application**:
 ## When to Use
 - **Normalization** → Best when consistency, integrity, and storage efficiency are priorities.  
 - **Denormalization** → Best when read performance and query speed are critical, especially in large-scale or distributed systems.  
+# Indexing in Databases
+
+## What is Indexing?
+- **Indexing** creates a **lookup table** for a column, which stores the column values and pointers to the rows containing those values.  
+- This allows the database to find records faster without scanning the entire table.  
+
+---
+
+## How It Works
+- Indexes are usually stored using a **B-Tree data structure**.  
+- B-Trees are balanced, multi-level search trees that make lookups efficient.  
+- ✅ Before Indexing → Query Time Complexity = **O(n)** (linear search).  
+- ✅ After Indexing → Query Time Complexity = **O(log n)** (tree search).  
+
+---
+
+## When to Use Indexing
+- Best for **read-intensive databases** where queries are frequent.  
+- Great for searching large datasets quickly.  
+
+---
+
+## When *Not* to Use Indexing
+- ❌ **Write-intensive databases** → Every insert, update, or delete requires updating the index, which slows down performance.  
+- ❌ **Small databases** → Overhead of maintaining an index is unnecessary since full scans are already fast.  
+
+---
+
+## Summary
+- Indexing improves **read/query performance**.  
+- Use for **large, read-heavy databases**.  
+- Avoid for **write-heavy or small databases**.  

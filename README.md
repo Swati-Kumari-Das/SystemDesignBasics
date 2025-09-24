@@ -864,3 +864,43 @@ Imagine an **E-commerce Application**:
 - ✅ Guarantees **accuracy and consistency**.  
 - ❌ Can lead to **delays** if the receiver is slow or unavailable.  
 - Best suited for **mission-critical, real-time systems**.  
+# Asynchronous Communication
+
+## What is Asynchronous Communication?
+- **Asynchronous communication** is **non-blocking**.  
+- The sender does not wait for an immediate response from the receiver.  
+- The system continues other tasks while waiting for the result.  
+
+---
+
+## Key Characteristics
+- Non-blocking in nature → improves responsiveness.  
+- Helps achieve **scalability** in distributed systems.  
+- Suitable for **long-running tasks**.  
+- Response can be processed later (via callbacks, queues, or notifications).  
+
+---
+
+## When is Asynchronous Communication Necessary?
+
+1. **Computation Takes a Lot of Time** ⏳  
+   - Useful when processing is heavy (e.g., video rendering, ML model training).  
+
+2. **Scalability of Applications** 📈  
+   - Allows systems to handle many concurrent requests efficiently (e.g., chat systems, microservices).  
+
+3. **Avoid Cascading Failure** 🔄  
+   - If one service is slow or down, async queues prevent the entire system from failing.  
+
+---
+
+## Real-World Examples
+- **Email sending** → User clicks "send", but the app doesn’t wait for the mail server.  
+- **Food delivery apps** → Order is placed instantly, updates arrive asynchronously (order confirmed, out for delivery).  
+- **Notification systems** → Push notifications may arrive later, but the app continues to function.  
+
+---
+
+## Summary
+- ✅ Great for **long-running, high-scale, fault-tolerant** systems.  
+- ❌ Not ideal when **immediate consistency** or real-time confirmation is required.  

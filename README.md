@@ -669,3 +669,59 @@ An **RDBMS (Relational Database Management System)** is software that allows per
    - Vertical scaling is easier, but horizontal scaling (sharding) is difficult to implement.  
 
 ---
+# NoSQL Databases
+
+## What is NoSQL?
+**NoSQL** stands for *Non-SQL* or *Non-Relational Database*.  
+It provides flexible schema and horizontal scaling, unlike traditional RDBMS.  
+
+NoSQL is an **umbrella term** for multiple types of databases.  
+
+---
+
+## Types of NoSQL Databases
+
+### 1. Key-Value Database
+- Data is stored as **key-value pairs** (like a dictionary).  
+- Very fast lookups, widely used for **caching**.  
+- ✅ Example: **Redis**, **Amazon DynamoDB**.  
+- 💡 Use Case: Session management in web apps, caching user preferences.  
+
+---
+
+### 2. Document Database
+- Data is stored in **JSON-like documents**.  
+- Each document can have a different structure (dynamic schema).  
+- ✅ Example: **MongoDB**, **CouchDB**.  
+- 💡 Use Case: Content management systems (e.g., storing product catalogs in **e-commerce apps** like Amazon).  
+
+---
+
+### 3. Columnar Database
+- Data is stored **column-wise instead of row-wise**.  
+- Great for **analytical queries & aggregation**.  
+- ✅ Example: **Apache Cassandra**, **HBase**.  
+- 💡 Use Case: Large-scale **data analytics**, time-series data (e.g., Netflix analyzing user watch history).  
+
+---
+
+### 4. Graph Database
+- Data is stored as **nodes and relationships** (graph structure).  
+- Perfect for analyzing **networks & connections**.  
+- ✅ Example: **Neo4j**, **Amazon Neptune**.  
+- 💡 Use Case: **Social networks** like Facebook, LinkedIn (friends, followers, connections).  
+
+---
+
+## Hybrid Approach: NewSQL
+- **Combines strengths of RDBMS & NoSQL**.  
+- Provides **relationships (from RDBMS)** + **dynamic schema & horizontal scaling (from NoSQL)**.  
+- ✅ Example: **Google Spanner**, **CockroachDB**.  
+
+---
+
+## When to Use NoSQL?
+- When schema flexibility is required.  
+- When dealing with very large-scale data.  
+- When horizontal scaling is a priority.  
+

@@ -725,3 +725,39 @@ NoSQL is an **umbrella term** for multiple types of databases.
 - When dealing with very large-scale data.  
 - When horizontal scaling is a priority.  
 
+# Polyglot Persistence
+
+## What is Polyglot Persistence?
+**Polyglot Persistence** is the practice of using **different types of databases** (RDBMS, NoSQL, Graph, Columnar, etc.) in the same application, depending on the specific use case.  
+
+Instead of forcing one database type for all requirements, the best-suited database is chosen for each feature.  
+
+---
+
+## Why Polyglot Persistence?
+- Different parts of an application have different data needs.  
+- No single database can efficiently handle all workloads.  
+- Improves performance, scalability, and flexibility.  
+<img width="745" height="426" alt="image" src="https://github.com/user-attachments/assets/ed17bb73-868b-4fa7-a1ca-8da6ee9a66dc" />
+
+---
+
+## Example Use Case
+Imagine an **E-commerce Application**:  
+- **RDBMS (MySQL / PostgreSQL)** → Orders, transactions, and inventory (structured relational data).  
+- **NoSQL Document DB (MongoDB)** → Product catalogs (flexible schema, different attributes for each product).  
+- **Key-Value Store (Redis)** → Shopping cart & session data (fast lookups).  
+- **Graph DB (Neo4j)** → Product recommendations based on user connections or similar purchases.  
+- **Columnar DB (Cassandra)** → Analytics on user behavior (fast aggregations on massive datasets).  
+
+---
+
+## Benefits
+- Each database is used for what it does best.  
+- Better performance & scalability.  
+- Flexibility for evolving business needs.  
+
+## Challenges
+- Increased complexity in system design.  
+- Requires expertise in multiple databases.  
+- Harder to maintain and manage.  

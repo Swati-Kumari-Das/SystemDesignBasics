@@ -761,3 +761,39 @@ Imagine an **E-commerce Application**:
 - Increased complexity in system design.  
 - Requires expertise in multiple databases.  
 - Harder to maintain and manage.  
+
+# Normalization vs Denormalization
+
+## Normalization
+- Process of structuring data into **multiple related tables**.  
+- Goal: **Eliminate redundancy** and ensure **data integrity**.  
+- ✅ Example: Storing customer details in one table and orders in another, linked via a foreign key.  
+
+---
+
+## Denormalization
+- Process of **combining data into a single table** or adding redundancy back into a database.  
+- Goal: **Optimize performance** (mainly faster reads).  
+- Often used in distributed systems where reducing network calls is critical.  
+
+---
+
+## Benefits of Denormalization
+- ⚡ Faster data read operations.  
+- 📋 Easier management and convenience for queries.  
+- 🔄 High data availability.  
+- 🌐 Fewer network calls (no need to join across multiple tables).  
+
+---
+
+## Challenges of Denormalization
+- 📦 **Redundant data** → Wastage of memory.  
+- 🔀 **Data inconsistency** → Same data stored in multiple places may get out of sync.  
+- 🖊️ **Slower write operations** → Multiple updates needed for redundant fields.  
+- ⚙️ Increased complexity in database design.  
+
+---
+
+## When to Use
+- **Normalization** → Best when consistency, integrity, and storage efficiency are priorities.  
+- **Denormalization** → Best when read performance and query speed are critical, especially in large-scale or distributed systems.  

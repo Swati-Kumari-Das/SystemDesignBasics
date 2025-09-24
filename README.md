@@ -1005,4 +1005,74 @@ A **web server** is a combination of hardware and software that ensures web appl
 
 ✅ **In short**:  
 A **web server** = **Hardware (stores files)** + **Software (HTTP server to process requests)** → makes websites accessible to users.
+# 📡 Communication Models in Client-Server Systems
+
+## 🔑 What is a Protocol?
+A **protocol** defines the rules, syntax, semantics, and timing of communication, along with error recovery methods.  
+Examples: **HTTP, WebSocket, TCP, UDP**.
+
+---
+
+## 🖇️ Communication Models
+
+### 1. Push
+- **Definition**: The server proactively sends events/data to the client.  
+- **Characteristic**: Proactive from the **server side**.  
+- **Benefit**: Reduces server load (no repeated client polling).  
+
+---
+
+### 2. Pull / Polling
+- **Definition**: Client sends a request, and the server responds.  
+- **Characteristic**: Client repeatedly asks the server for new data.  
+- **Downside**: Inefficient; high network usage.  
+
+---
+
+### 3. Long Polling
+- **Definition**: Client sends a request, and the server holds the connection open until new data is available.  
+- **Disadvantages**:  
+  - Ordering issues  
+  - Server stays busy (maintaining open connections)  
+
+---
+
+### 4. Socket
+- **Definition**: A **socket** is an endpoint of a two-way connection between two nodes over a network.  
+- **Characteristic**: Full **two-way communication** (bi-directional).  
+- **Use Cases**:  
+  - Real-time chat applications  
+  - Online multiplayer gaming  
+
+---
+
+### 5. Server-Sent Events (SSE)
+- **Definition**: Client subscribes to a server "stream"; server continuously pushes messages until one side closes.  
+- **Characteristics**:  
+  - **One-way connection** (Server → Client)  
+  - **Long-lived connection**  
+- **Examples**:  
+  - Live sports score updates  
+  - Real-time news feeds  
+
+---
+
+## 📌 Key Distinction
+- **Push API**:  
+  - Works via **service workers**  
+  - Can send notifications **even when the site/app is not open** (e.g., mobile/desktop push notifications).  
+
+- **SSE / WebSockets**:  
+  - Work only when the user has the website/app **open in the browser**.  
+
+---
+
+## ⚙️ Protocol Mapping
+- **Polling / Long Polling / SSE** → use **HTTP**.  
+- **WebSockets** → use the **WebSocket protocol** (`ws://` or `wss://`) over TCP.  
+- **Sockets (general)** → low-level connections using **TCP or UDP**.  
+
+---
+
+✅ **In short**: Communication models define *how* clients and servers exchange data. Protocols like **HTTP, TCP, WebSocket** provide the foundation, while models like **Polling, Push, SSE, and Sockets** are the strategies built on top.
 

@@ -1076,3 +1076,99 @@ Examples: **HTTP, WebSocket, TCP, UDP**.
 
 ✅ **In short**: Communication models define *how* clients and servers exchange data. Protocols like **HTTP, TCP, WebSocket** provide the foundation, while models like **Polling, Push, SSE, and Sockets** are the strategies built on top.
 
+
+# 🌐 Web Applications and Architectures
+
+## 🔎 What is a Web Application?
+- A **web application** is an application that runs on the internet.  
+- **Difference between Website and Web Application**:  
+  - **Website** → Static, mostly informational.  
+  - **Web Application** → Dynamic, interactive, involves **client-server communication**.  
+
+---
+
+## 🖇️ Client-Server Interaction
+- **Client**: The system that **initiates communication** over the network.  
+  Examples: Mobile apps, web-based consoles, laptops.  
+- **Server**: The system that **receives and processes requests** over the network.  
+- Note: A **web server** can also act as a **client** when requesting data from another server.  
+
+---
+
+## ⚡ Requirements for Communication
+- **Language Independent** (can work across platforms/languages)  
+- **Fast** (low latency)  
+- **Lightweight** (minimal overhead)  
+- **Works over the Network**  
+
+---
+
+## 🔗 REST (Representational State Transfer)
+A style/standard to enable communication between client and server.  
+- For REST, the **server must expose REST APIs**.  
+- REST API = **URI + HTTP Verb**  
+
+### HTTP Verbs:
+- **POST** → Create  
+- **GET** → Read  
+- **PUT** → Update  
+- **DELETE** → Delete  
+
+👉 Example: `173.76.310.45:7001/ios/nflx/plan-listing`  
+
+---
+
+## 🏛️ Service-Oriented Architecture (SOA)
+- An architecture style that promotes **loose coupling** and **granular applications**.  
+- Focus: **Reusability of components**.  
+
+### ✅ Advantages
+- Selective scaling  
+- Different tech stacks can be used  
+- Loose coupling  
+- Agile development  
+
+### ❌ Disadvantages
+- Higher latency  
+- Complex to secure  
+- Cascading failures  
+- Complex to understand  
+
+---
+
+## 🧩 Microservices Architecture
+- An **evolved version of SOA**.  
+- Most granular design → every service is **completely independent**.  
+- Focus: **Decoupling** rather than reusability.  
+
+### 🔄 SOA vs Microservices
+
+| Feature | SOA | Microservices |
+|---------|-----|---------------|
+| Data Storage | Services can share | Independent for each microservice |
+| Scalability | Less scalable | Highly scalable |
+| Deployment | Time-consuming | Easy & faster |
+| Focus | Reusability | Decoupling |
+
+---
+
+## 🏗️ N-Tier Architecture
+- A web application can be designed with multiple **tiers (layers)**.  
+- A **tier** = logical separation of components.  
+
+### Types of Tiers:
+- **1-Tier** → All components (frontend, backend, database) deployed on the same machine.  
+- **2-Tier** → Frontend on one layer, Backend + Database on another.  
+- **3-Tier** → Frontend, Backend, and Database each separated into independent layers.  
+
+### ✅ Advantages of Tier Architecture:
+- Easier modifications and updates  
+- Dedicated roles/tasks for each layer  
+- Improves maintainability and scalability  
+
+---
+
+## 📌 Key Takeaways
+- **REST** enables lightweight communication using **HTTP verbs**.  
+- **SOA** focuses on **reuse**; **Microservices** focus on **independence and scalability**.  
+- **N-Tier architecture** separates concerns and improves maintainability of applications.  

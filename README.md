@@ -1267,4 +1267,31 @@ A style/standard to enable communication between client and server.
 ## 📌 Summary
 - **Basic Auth** → Username & Password on every request (simple but insecure).  
 - **Token Auth** → Server issues a reusable token after login (stateless, more secure).  
-- **OAuth** → Authorization framework that allows **delegated access** using tokens (used by Google/Facebook logins).  
+- **OAuth** → Authorization framework that allows **delegated access** using tokens (used by Google/Facebook logins).
+
+  # 🛡️ Proxy Server
+
+## 🔎 What is a Proxy Server?
+- A **proxy server** is hardware or software that acts as an **intermediary** between a client and an application/server.  
+- It provides a **gateway** between the user and the internet.
+
+---
+
+## ⚙️ How it Works
+Client → [ Proxy Server ] → Server
+
+
+- The **client** sends a request to the proxy.  
+- The **proxy server** forwards the request to the destination server.  
+- The **server** responds to the proxy, which then returns the response to the client.  
+- ✅ The **server does not directly know the client**.
+
+---
+
+## 🎯 Benefits of Proxy Servers
+- Hides client identity (anonymity).  
+- Can filter traffic (security/firewall).  
+- Helps in caching frequently accessed data.  
+- Provides controlled access to restricted resources.  
+
+---

@@ -1172,3 +1172,40 @@ A style/standard to enable communication between client and server.
 - **REST** enables lightweight communication using **HTTP verbs**.  
 - **SOA** focuses on **reuse**; **Microservices** focus on **independence and scalability**.  
 - **N-Tier architecture** separates concerns and improves maintainability of applications.  
+
+# 🔐 Authentication vs Authorization
+
+## 🧾 Authentication
+- **Definition**: Verifies **who you are**.  
+- **Purpose**: To confirm the identity of the user/system.  
+- **Examples**:  
+  - Login with username & password  
+  - OTP verification  
+  - Biometric authentication (fingerprint, face ID)  
+
+---
+
+## 🛡️ Authorization
+- **Definition**: Defines **what you can do**.  
+- **Purpose**: To control access levels and permissions after authentication.  
+- **Examples**:  
+  - Admin can create/delete users, but a regular user cannot  
+  - A user can view their own bank balance but not others’  
+  - Role-based access in applications (Admin, Manager, User)  
+
+---
+
+## 🔑 Key Difference
+
+| Aspect            | Authentication ✅ | Authorization ✅ |
+|-------------------|------------------|------------------|
+| **Meaning**       | Confirms identity | Grants access rights |
+| **Question**      | "Who are you?" | "What can you do?" |
+| **Process**       | Done **before** authorization | Done **after** authentication |
+| **Example**       | Entering email + password | Accessing admin dashboard |
+
+---
+
+👉 In short:  
+- **Authentication = Identity**  
+- **Authorization = Permissions**

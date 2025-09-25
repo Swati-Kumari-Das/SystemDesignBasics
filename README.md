@@ -1295,3 +1295,79 @@ Client → [ Proxy Server ] → Server
 - Provides controlled access to restricted resources.  
 
 ---
+
+# 🔄 Forward Proxy vs Reverse Proxy
+
+## 🖥️ Forward Proxy
+- **Definition**: A forward proxy sits **in front of the client** and hides the client’s identity.  
+- **Flow**:  
+Client → [ Forward Proxy ] → Server
+
+- **Use Cases**:
+- Anonymity for clients (server doesn’t know the client).  
+- Access control (restricting clients to certain sites).  
+- Bypassing geo-restrictions or firewalls.  
+
+---
+
+## 🖥️ Reverse Proxy
+- **Definition**: A reverse proxy sits **in front of the server** and hides the server’s identity.  
+- **Flow**:  
+Client → [ Reverse Proxy ] → Server(s)
+
+- **When to Use Reverse Proxy?**
+- To **hide server details** from clients.  
+- To make users feel like there’s only **one unified server**.  
+- To provide **load balancing** across multiple backend servers.  
+- To **swap or upgrade backend servers** without disrupting user traffic.  
+- To **filter/block certain client requests** (security).  
+
+---
+
+## 📌 Key Difference
+| Proxy Type        | Hides   | Positioned In Front Of | Used For |
+|-------------------|---------|------------------------|----------|
+| **Forward Proxy** | Client  | Client                 | Anonymity, access control, bypassing restrictions |
+| **Reverse Proxy** | Server  | Server                 | Security, load balancing, scalability, server management |
+
+---
+
+## ⚙️ Real-World Examples
+
+### 🔹 Forward Proxy
+- **Squid Proxy**: Used for caching, filtering, and anonymity.  
+- **Tor**: Routes traffic through multiple proxies for anonymity.  
+
+### 🔹 Reverse Proxy
+- **NGINX**  
+- Can serve as a reverse proxy, load balancer, and cache.  
+- Example config:
+  ```nginx
+  server {
+      listen 80;
+      server_name myapp.com;
+
+      location / {
+          proxy_pass http://backend_server;
+      }
+  }
+  ```
+
+- **Apache HTTP Server (mod_proxy)**  
+- Reverse proxy module for Apache.  
+- Example config:
+  ```apache
+  <VirtualHost *:80>
+      ServerName myapp.com
+      ProxyPreserveHost On
+      ProxyPass / http://backend_server/
+      ProxyPassReverse / http://backend_server/
+  </VirtualHost>
+  ```
+
+---
+
+✅ **Summary**:  
+- **Forward Proxy** → Protects/represents the **client**.  
+- **Reverse Proxy** → Protects/represents the **server**.  
+- **NGINX & Apache** are the most widely used **reverse proxies** in production.  

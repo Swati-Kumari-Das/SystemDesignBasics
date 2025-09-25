@@ -1209,3 +1209,62 @@ A style/standard to enable communication between client and server.
 👉 In short:  
 - **Authentication = Identity**  
 - **Authorization = Permissions**
+
+# 🔐 Authentication Methods
+
+## 1️⃣ Basic Authentication
+- **Definition**: Client sends the **username and password** with each request (usually in the HTTP header).
+- **Mechanism**: 
+  - `Authorization: Basic <Base64(username:password)>`
+  - The server decodes and verifies credentials.
+- **Pros**: Very simple to implement.
+- **Cons**: 
+  - Credentials are sent with every request (even if Base64 encoded, it’s not secure).  
+  - Should only be used with **HTTPS**.  
+  - No session management.
+
+---
+
+## 2️⃣ Token-Based Authentication
+- **Definition**: Instead of sending username & password on every request, the server issues a **token** after successful login.
+- **Mechanism**:
+  1. Client sends username & password **once**.
+  2. Server validates and returns a **token** (e.g., JWT).  
+  3. Client includes the token in every subsequent request:  
+     `Authorization: Bearer <token>`
+  4. Server verifies the token → grants/denies access.
+- **Pros**: 
+  - Credentials are not repeatedly sent.  
+  - Tokens can have an expiry time → more secure.  
+  - Scales well for distributed systems (stateless).  
+- **Cons**: 
+  - Token theft can still be a risk.  
+  - Token revocation can be tricky.
+
+---
+
+## 3️⃣ OAuth (Open Authorization)
+- **Definition**: An **authorization framework** that allows third-party applications to access a user’s resources **without sharing credentials**.
+- **How it works**:
+  - Instead of giving your password, you authorize a third-party app to access limited data (using **access tokens**).
+- **Real-World Examples**:
+  - "Login with Google" or "Login with Facebook".  
+  - A fitness app accessing your Google Fit data.  
+- **Roles in OAuth**:
+  - **Resource Owner**: The user (you).  
+  - **Client**: The application requesting access.  
+  - **Authorization Server**: Issues tokens (e.g., Google, Facebook).  
+  - **Resource Server**: Hosts protected resources (e.g., Gmail, Google Drive).  
+- **Pros**:
+  - Highly secure → no need to share passwords with third-party apps.  
+  - Fine-grained control over access (scope).  
+- **Cons**:
+  - More complex to implement.  
+  - If OAuth provider is down, third-party logins fail.
+
+---
+
+## 📌 Summary
+- **Basic Auth** → Username & Password on every request (simple but insecure).  
+- **Token Auth** → Server issues a reusable token after login (stateless, more secure).  
+- **OAuth** → Authorization framework that allows **delegated access** using tokens (used by Google/Facebook logins).  
